@@ -8,7 +8,6 @@ var scores = [0, 0];
 var roundScore = 0;
 
 //shoni ali talara busnig hadgalah huwisagch,  1-6 gesen utgig ene huwisagchid sanamsaguiger uusgej ugnu
-//
 
 document.getElementById("score-0").textContent = "0";
 document.getElementById("score-1").textContent = "0";
@@ -32,10 +31,21 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
     roundScore = roundScore + diceNumber;
     document.getElementById("current-" + activePlayer).textContent = roundScore;
   } else {
-    //1  buusan tul toglogcin eeljig en hesegt solij ugn.
-    //herew idewhtei toglogc ni 0 baiwal idewhtei toglogcig 1 bolgono.
-    //Ugui idewhtei toglogc ni 0 bolgo.
+    roundScore = 0;
+    document.getElementById("current-" + activePlayer).textContent = 0;
     activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
-    //
+    // ulaaj tsegiig shiljuleh kod
+    document.querySelector(".player-0-panel").classList.toggle("active");
+    document.querySelector(".player-1-panel").classList.toggle("active");
+    // shog tur alga bolgoh
+    diceDom.style.display = "none";
   }
+});
+// Hold towchnii event listener
+document.querySelector(".btn-hold").addEventListener("click", function () {
+  //ug toglogcin tsuglulsan onog global onoon der ni nemj ugn.
+  roundScore;
+  //eeljin onoog ni 0 bolgono.
+
+  //toglogcin eeljig songono.
 });
