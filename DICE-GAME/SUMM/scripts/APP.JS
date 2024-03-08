@@ -1,3 +1,7 @@
+if (module.hot) {
+  module.hot.accept();
+}
+
 // toglogcin eljig hadgalah huwisagch , first player - 0 second player - 1
 var activePlayer = 0;
 
@@ -24,7 +28,7 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
   //shoonii zurgig webder gargaj irne
   diceDom.style.display = "block";
   //dice-2,png zuragnii urgutlur shud zurgig gargaj ireh.
-  diceDom.src = "dice-" + diceNumber + ".png";
+  diceDom.src = "./SUMM/images/dice-" + diceNumber + ".png";
   //Buusan too ni 1es ylgatai bol idewhtei toglogcin eljin tog nemegdulne.
   if (diceNumber !== 1) {
     //1-es ylgatai to bulaa , buusan toog toglogcid nemj ugn
