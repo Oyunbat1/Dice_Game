@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var activePlayer = 0;
 
 var score = [0, 0];
@@ -51,3 +52,5 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
     SwitchToNextPlayer();
   }
 });
+=======
+>>>>>>> lesson44
