@@ -1,8 +1,10 @@
-var activePlayer = 0;
+var activePlayer;
 
-var score = [0, 0];
+var score;
 
-var roundScore = 0;
+var roundScore;
+var DiceDom = document.querySelector(".dice");
+
 //---------
 function SwitchToNextPlayer() {
   roundScore = 0;
@@ -14,13 +16,31 @@ function SwitchToNextPlayer() {
   DiceDom.style.display = "none";
 }
 //------------------
-document.getElementById("score-0").textContent = "0";
-document.getElementById("score-1").textContent = "0";
-document.getElementById("current-0").textContent = "0";
-document.getElementById("current-1").textContent = "0";
+function StartGame() {
+  activePlayer = 0;
 
-var DiceDom = document.querySelector(".dice");
-DiceDom.style.display = "none";
+  score = [0, 0];
+
+  roundScore = 0;
+  document.getElementById("score-0").textContent = "0";
+  document.getElementById("score-1").textContent = "0";
+  document.getElementById("current-0").textContent = "0";
+  document.getElementById("current-1").textContent = "0";
+
+  document.getElementById("name-0").textContent = "Player 1";
+  document.getElementById("name-1").textContent = "Player 2";
+
+  document.querySelector(".layer-0-panel").classList.remove("winner");
+  document.querySelector(".layer-1-panel").classList.remove("winner");
+
+  document.querySelector(".layer-0-panel").classList.remove("active");
+  document.querySelector(".layer-1-panel").classList.remove("active");
+
+  document.querySelector(".layer-1-panel").classList.add("active");
+
+  DiceDom.style.display = "none";
+}
+//-----------------------------
 
 document.querySelector(".btn-roll").addEventListener("click", function () {
   var RandomNumber = Math.floor(Math.random() * 6) + 1;
@@ -51,3 +71,5 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
     SwitchToNextPlayer();
   }
 });
+
+document.querySelector(".btn-new").addEventListener("click", StartGame);
